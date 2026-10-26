@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Goes Up</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 150px;
+            margin: 0;
+            font-weight: bold;
+        }
+        p {
+            color: gray;
+            font-size: 20px;
+            letter-spacing: 5px;
+            margin-top: 10px;
+        }
+        .ad-container {
+            width: 300px;
+            height: 250px;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="number">1</h1>
+    <p>DAY</p>
+
+    <!-- Adsterra Ad Code Start -->
+    <div class="ad-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '6151874',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/6151874/invoke.js"></script>
+    </div>
+    <!-- Adsterra Ad Code End -->
+
+    <script>
+        // Launch Date: October 26, 2026
+        const launchDate = new Date(2026, 9, 26); 
+        const now = new Date();
+        
+        // 4 AM IST Logic
+        if (now.getHours() < 4) {
+            now.setDate(now.getDate() - 1);
+        }
+        
+        const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const launchMidnight = new Date(launchDate.getFullYear(), launchDate.getMonth(), launchDate.getDate());
+        
+        const differenceInTime = todayMidnight.getTime() - launchMidnight.getTime();
+        const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+        
+        const dayNumber = differenceInDays + 1;
+        
+        document.getElementById("number").innerText = dayNumber;
+    </script>
+</body>
+</html>
